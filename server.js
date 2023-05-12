@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const hbs = require('express-handlebars');
 
 app.use((req, res, next) => {
   res.show = (name) => {
@@ -20,6 +21,10 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.show('about.html');
+});
+
+app.get('/hello/:name', (req, res) => {
+  res.send(`Hello ${req.params.name}`);
 });
 
 app.use((req, res) => {
