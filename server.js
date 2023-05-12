@@ -32,7 +32,17 @@ app.get('/about', (req, res) => {
   // res.show('about.html');
   res.render('about');
 });
+app.get('/history', (req, res) => {
+  res.render('history');
+});
 
+app.get('/info', (req, res) => {
+  res.render('info');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
 // app.get('/hello/:name', (req, res) => {
 //   res.send(`Hello ${req.params.name}`);
 // });
@@ -41,7 +51,6 @@ app.get('/hello/:name', (req, res) => {
 });
 
 app.use((req, res) => {
-  // res.status(404).show('404.html');
   res.render('404');
 });
 
